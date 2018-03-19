@@ -2,6 +2,7 @@
 The project is a web interface written in python, that can configure devices both using ansible and API calls.
 
 ## Requirements:
+- Git
 - Python 3.6
 - Pip
 ### Pip:
