@@ -5,6 +5,7 @@ The project is a web interface written in python, that can configure devices bot
 - Git
 - Python 3.6
 - Pip
+
 ### Pip:
 - requests==2.12.4
 - Flask==0.12.2
@@ -20,7 +21,7 @@ cd git
 git clone https://github.com/Helweg/WebAnsi-API.git
 cd WebAnsi-API
 pip3 install flask ncclient ansible request beautifulsoup4
-```pytho
+```
 
 ## Add devices:
 Open the 'hosts' file and add the device IP to All.
