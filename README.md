@@ -12,10 +12,16 @@ The project is a web interface written in python, that can configure devices bot
 
 ## Instalation:
 ```
+mkdir git
+cd git
+git clone https://github.com/Helweg/WebAnsi-API.git
+cd WebAnsi-API
 pip install -r requirements.txt --no-index
 ```
 
 ## Usage:
+
 ```
+Python3 Web.py
 ```
 
