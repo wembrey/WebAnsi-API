@@ -8,7 +8,7 @@
 /* Create two equal columns that floats next to each other */
 .column {
     float: left;
-    width: 50%;
+    width: 33.3%;
     padding: 10px;
     height: 300px; /* Should be removed. Only for demonstration */
 }
@@ -40,7 +40,7 @@
           </form>
         </div>
          <div class="column">
-          <h2>Execute:</h2>
+          <h2>Get Version:</h2>
            <form action = "http://localhost:5000/execute" method = "POST">
               <p>Device:
                 <select name = "Device">
@@ -49,10 +49,21 @@
                   {% endfor %}
                 </select>
               </p>
-              <p>Command: <input type = "text" name = "Command" /></p>
-              <p><input type = "submit" value = "Execute" /></p>
+              <p><input type = "submit" value = "Get Version" /></p>
           </form>
         </div>
+        <div class="column">
+          <h2>Version:</h2>
+          {% if hostName != ""%}
+            <p>Hostname :       {{ hostName }}</P>
+          {% endif %}
+          {% if model != ""%}
+            <p>Product Model :  {{ model }}</P>
+          {% endif %}
+          {% if version != ""%}
+            <p>System Version : {{ version }}</P>
+          {% endif %}
+       </div>
       </div>
       <h3>Logs:</h3>
       {% for msg, time in logList %}
