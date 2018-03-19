@@ -1,0 +1,10 @@
+---
+- name: Create and apply vSRX configuration
+  hosts: '{{ device }}'
+  vars:
+    device_hostname: '{{ device_hostname }}'
+  connection: local
+  gather_facts: no
+  roles:
+    - common
+    - vsrx

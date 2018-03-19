@@ -1,0 +1,18 @@
+---
+- name: Apply configuration
+  hosts: '{{ device }}'
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: assembling configfurations
+      assemble: src={{ build_dir }} dest={{ junos_conf }}
+    - name: Pushing config ... please wait
+      junos_install_config:
+        host: "{{ device }}"
+        port: "{{ netconf_port }}"
+        username: "{{ user }}"
+        password: "{{ pass }}"
+        file: "{{ junos_conf }}"
+        replace: yes

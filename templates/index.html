@@ -1,0 +1,66 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+</style>
+
+   <body>
+     <div class="row">
+        <div class="column">
+         <h2>Configure:</h2>
+          <form action = "http://localhost:5000/deploy" method = "POST">
+             <p>Device:
+               <select name = "Device">
+                 {% for device in deviceList %}
+                 <option value= {{ device }}>{{ device }}</option>
+                 {% endfor %}
+               </select>
+             </p>
+             <p>Hostname: <input type = "text" name = "Hostname" /></p>
+             <p><input type = "submit" value = "Deploy" />
+               <input type="radio" name="Method" value="ansi"checked> Ansible
+               <input type="radio" name="Method" value="api"> API</p>
+          </form>
+        </div>
+         <div class="column">
+          <h2>Execute:</h2>
+           <form action = "http://localhost:5000/execute" method = "POST">
+              <p>Device:
+                <select name = "Device">
+                  {% for device in deviceList %}
+                  <option value= {{ device }}>{{ device }}</option>
+                  {% endfor %}
+                </select>
+              </p>
+              <p>Command: <input type = "text" name = "Command" /></p>
+              <p><input type = "submit" value = "Execute" /></p>
+          </form>
+        </div>
+      </div>
+      <h3>Logs:</h3>
+      {% for msg, time in logList %}
+      <hr noshade>
+        <p align="right">{{time}}</p>
+        <p>{{ msg }}</p>
+
+      <hr noshade>
+      {% endfor %}
+   </body>
+</html>

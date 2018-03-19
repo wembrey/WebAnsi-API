@@ -1,0 +1,4 @@
+---
+- import_playbook: clean.yaml
+- import_playbook: run.yaml
+- import_playbook: assemble.yaml
