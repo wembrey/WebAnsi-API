@@ -20,8 +20,10 @@ pip install -r requirements.txt --no-index
 ```
 
 ## Usage:
-
 ```
 Python3 Web.py
 ```
-
+Access the webpage at:
+```
+127.0.0.1:5000
+```
