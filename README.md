@@ -19,6 +19,10 @@ cd WebAnsi-API
 pip install -r requirements.txt --no-index
 ```
 
+## Add devices:
+Open the 'hosts' file and add the device IP to All.
+
+
 ## Usage:
 ```
 Python3 Web.py
